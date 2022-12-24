@@ -1,16 +1,20 @@
 import styles from './Task.module.css';
 import { Trash, Circle, CheckCircle } from 'phosphor-react';
 
-interface TaskProps {
+
+export interface TaskProps {
   isDone: boolean;
   content: string;
+  id: string;
+  onMarkAsDone?: () => void;
+  onDelete?: () => void;
 }
 
-export function Task({ isDone, content }: TaskProps) {
+export function Task({ isDone, content, onMarkAsDone, onDelete }: TaskProps) {
   return (
     <div className={styles.task}>
       <div>
-        <button>
+        <button onClick={onMarkAsDone}>
           {isDone ? (
             <CheckCircle size={24} color="#5e60ce" weight='fill' />
             ) : (
@@ -21,7 +25,7 @@ export function Task({ isDone, content }: TaskProps) {
           {content}
         </span>
       </div>
-      <button>
+      <button onClick={onDelete}>
         <Trash size={24} color="#808080" />
       </button>
     </div>
