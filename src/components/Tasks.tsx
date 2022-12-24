@@ -25,7 +25,9 @@ export function Tasks () {
       </article> */}
 
       <article className={styles.tasksList}>
-        <Task isDone={false} content='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.' />        
+        {[1,2,3,4, 5,6,7,8, 9,10,].map(item => (
+          <Task isDone={item % 2 === 0 ? true : false} content='teste' key={item} />  
+        ))}      
       </article>
     </main>
   )
