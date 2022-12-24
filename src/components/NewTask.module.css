@@ -6,6 +6,7 @@
 .newTask input {
   width: 100%;
   background: var(--gray-500);
+  color: var(--gray-100);
   border: 1px solid var(--gray-700);
   border-radius: 8px;
   padding: 1rem;
@@ -25,4 +26,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.newTask button:hover {
+  opacity: 0.8;
 }
