@@ -60,8 +60,9 @@ export function App() {
     setTasks([...tasksWithoutDoneTasks, ...tasksWithoutUndoneTasks]);
   }
 
-  function handleDeleteTask() {
-    console.log('delete');
+  function handleDeleteTask(id: string) {
+    const tasksWithoutDeletedTask = tasks.filter(task => task.id !== id);
+    setTasks(tasksWithoutDeletedTask);
   }
 
   return (
