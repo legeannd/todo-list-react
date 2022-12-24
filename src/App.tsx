@@ -8,8 +8,14 @@ import { Tasks } from './components/Tasks';
 import './global.css';
 import { TaskProps } from './components/Task';
 
+export interface TaskObject {
+  content: string;
+  id: string;
+  isDone: boolean;
+}
+
 export function App() {
-  const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [tasks, setTasks] = useState<TaskObject[]>([]);
   const [doneTasks, setDoneTasks] = useState('0');
 
   useEffect(() => {
@@ -17,23 +23,41 @@ export function App() {
       if (task.isDone) {
         return acc + 1;
       }
+
+      return acc;
     }, 0);
 
-    setDoneTasks(`${doneTasksNumber ?? 0} de ${tasks.length}`)
+    setDoneTasks(`${doneTasksNumber} de ${tasks.length}`)
   }, [tasks])
   
 
   function handleCreateTask(taskValue: string) {
+
+    if (taskValue === '') {
+      return;
+    }
+
     const newTask = {
       isDone: false,
       content: taskValue,
       id: uuidv4(),
     }
-    setTasks([...tasks, newTask])
+    setTasks([newTask, ...tasks]);
   }
 
-  function handleMarkTaskAsDone() {
-    console.log('check');
+  function handleMarkTaskAsDone(id: string) {
+    const allTasksWithChangedDone = tasks.map((task) => {
+      if (task.id === id) {
+        return {...task, isDone: true}
+      }
+
+      return task;
+    });
+
+    const tasksWithoutDoneTasks = allTasksWithChangedDone.filter(task => !task.isDone);
+    const tasksWithoutUndoneTasks = allTasksWithChangedDone.filter(task => task.isDone);
+ 
+    setTasks([...tasksWithoutDoneTasks, ...tasksWithoutUndoneTasks]);
   }
 
   function handleDeleteTask() {

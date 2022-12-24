@@ -6,15 +6,15 @@ export interface TaskProps {
   isDone: boolean;
   content: string;
   id: string;
-  onMarkAsDone?: () => void;
-  onDelete?: () => void;
+  onMarkAsDone: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
-export function Task({ isDone, content, onMarkAsDone, onDelete }: TaskProps) {
+export function Task({ isDone, content, id, onMarkAsDone, onDelete }: TaskProps) {
   return (
     <div className={styles.task}>
       <div>
-        <button onClick={onMarkAsDone}>
+        <button onClick={() => onMarkAsDone(id)}>
           {isDone ? (
             <CheckCircle size={24} color="#5e60ce" weight='fill' />
             ) : (
@@ -25,7 +25,7 @@ export function Task({ isDone, content, onMarkAsDone, onDelete }: TaskProps) {
           {content}
         </span>
       </div>
-      <button onClick={onDelete}>
+      <button onClick={() => onDelete(id)}>
         <Trash size={24} color="#808080" />
       </button>
     </div>

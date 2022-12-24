@@ -2,12 +2,12 @@ import styles from './Tasks.module.css';
 
 import clipboard from '../assets/clipboard.png';
 import { Task, TaskProps } from './Task';
-import { useState } from 'react';
+import { TaskObject } from '../App';
 
 interface TasksProps {
-  tasks: TaskProps[];
+  tasks: TaskObject[];
   doneTasks: string;
-  onMarkAsDone: () => void;
+  onMarkAsDone: (id: string) => void;
   onDelete: () => void;
 }
 
