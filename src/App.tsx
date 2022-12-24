@@ -27,7 +27,12 @@ export function App() {
       return acc;
     }, 0);
 
-    setDoneTasks(`${doneTasksNumber} de ${tasks.length}`)
+    if (tasks.length === 0) {
+      setDoneTasks('0');
+    } else {
+      setDoneTasks(`${doneTasksNumber} de ${tasks.length}`);
+    }
+
   }, [tasks])
   
 
