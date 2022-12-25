@@ -6,7 +6,6 @@ import styles from './App.module.css';
 import { Tasks } from './components/Tasks';
 
 import './global.css';
-import { TaskProps } from './components/Task';
 
 export interface TaskObject {
   content: string;
@@ -17,6 +16,13 @@ export interface TaskObject {
 export function App() {
   const [tasks, setTasks] = useState<TaskObject[]>([]);
   const [doneTasks, setDoneTasks] = useState('0');
+
+  useEffect(() => {
+    const savedTasks = localStorage.getItem('todo-tasks');
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+  }, [])
 
   useEffect(() => {
     const doneTasksNumber = tasks.reduce((acc, task) => {
@@ -31,10 +37,10 @@ export function App() {
       setDoneTasks('0');
     } else {
       setDoneTasks(`${doneTasksNumber} de ${tasks.length}`);
+      localStorage.setItem('todo-tasks', JSON.stringify(tasks));
     }
 
-  }, [tasks])
-  
+  }, [tasks]);
 
   function handleCreateTask(taskValue: string) {
 
