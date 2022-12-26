@@ -8,7 +8,7 @@ interface TasksProps {
   tasks: TaskObject[];
   doneTasks: string;
   onMarkAsDone: (id: string) => void;
-  onDelete: () => void;
+  onDelete: (id: string) => void;
 }
 
 export function Tasks({ tasks, doneTasks, onMarkAsDone, onDelete }: TasksProps) {
