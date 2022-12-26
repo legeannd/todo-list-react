@@ -5,11 +5,6 @@
 # [To-Do List](https://todo-list-react-legeannd.vercel.app/)
 ![stacks](https://img.shields.io/badge/ReactJS-v18.2.0-brightgreen) ![stacks](https://img.shields.io/badge/UUID-v9.0.0-brightgreen) ![stacks](https://img.shields.io/badge/Stack-Typescript-blue) ![GitHub](https://img.shields.io/github/license/legeannd/todo-list-react)
 
-
-<p align="center">
-  <img src="uploads/capa.png"/>
-</p>
-
 <p align="center">
   <img width="800" src="uploads/web.gif"/>
 </p>
@@ -22,7 +17,7 @@
 
 ## About the project <a id="section-en_us"></a>
 
-This is a To-Do app made in React and Typescript where the user can add their tasks and complete tasks already created. The app uses the browser's local storage to save the user's tasks and retrieve them later, even if the browser has been closed.
+This is a to-do app made in React and Typescript where the user can add their tasks and complete tasks already created. The app uses the browser's local storage to save the user's tasks and retrieve them later, even if the browser has been closed.
 
 ## Content
   * [Techs](#techs)
@@ -62,7 +57,7 @@ After finishing installation, the web page will be open in your browser.
 
 ## Sobre o projeto <a id="secao-pt_br"></a>
 
-Letmeask é uma plataforma para criação de salas de perguntas, onde o usuário pode criar e gerenciar sua sala, além de poder participar de salas criadas por outros usuários, onde é possível criar uma nova pergunta na sala ou curtir mensagens já existentes. As perguntas são criadas em tempo real e são mostradas ao usuário conforme são criadas, devido à funcionalidade de banco de dados em tempo real do Firebase.
+Este é um aplicativo de lista de tarefas feito em React e Typescript onde o usuário pode adicionar suas tarefas e completar tarefas já criadas. O aplicativo usa o armazenamento local do navegador para salvar as tarefas do usuário e recuperá-las posteriormente, mesmo que o navegador tenha sido fechado.
 
 ## Conteúdos
   * [Tecnologias](#tecnlogias)
@@ -72,8 +67,8 @@ Letmeask é uma plataforma para criação de salas de perguntas, onde o usuário
 ## Tecnologias <a id="tecnologias"></a>
 
 - [x] React
-- [x] Firebase
-- [x] Sass
+- [x] Typescript
+- [x] Local Storage
 
 ## Como executar o projeto <a id="instalacao"></a>
 Para executar o projeto, você irá precisar ter o Node e o NPM ou Yarn instalados para baixar as dependências.
