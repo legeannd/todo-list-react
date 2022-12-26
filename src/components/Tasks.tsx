@@ -17,11 +17,11 @@ export function Tasks({ tasks, doneTasks, onMarkAsDone, onDelete }: TasksProps) 
     <main className={styles.tasks}>
       <header className={styles.info}>
         <div className={styles.createdTasks}>
-          <span>Tarefas criadas</span>
+          <span>Created tasks</span>
           <span>{tasks.length}</span>
         </div>
         <div className={styles.finishedTasks}>
-          <span>Concluídas</span>
+          <span>Completed</span>
           <span>{doneTasks}</span>
         </div>
       </header>
@@ -30,8 +30,8 @@ export function Tasks({ tasks, doneTasks, onMarkAsDone, onDelete }: TasksProps) 
         <article className={styles.empty}>
           <img src={clipboard} alt="Clipboard" />
           <div>
-            <strong>Você ainda não tem tarefas cadastradas</strong>
-            <span>Crie tarefas e organize seus itens a fazer</span>
+            <strong>You don't have tasks registered yet</strong>
+            <span>Create tasks and organize your to-do items</span>
           </div>
         </article>
       ) : (

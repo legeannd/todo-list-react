@@ -24,12 +24,12 @@ export function NewTask({ onCreate }: NewTaskProps) {
         type="text" 
         value={taskValue}
         onChange={handleCreateTaskText}
-        placeholder="Adicione uma nova tarefa" 
+        placeholder="Add a new task" 
         className={styles.input}
       />
       
       <button className={styles.button} onClick={handleClickOnCreateButton}>
-        Criar
+        Create
         <PlusCircle size={16} color="white" weight="bold"/>
       </button>
     </div>
