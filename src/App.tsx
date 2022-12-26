@@ -35,6 +35,7 @@ export function App() {
 
     if (tasks.length === 0) {
       setDoneTasks('0');
+      localStorage.removeItem('todo-tasks');
     } else {
       setDoneTasks(`${doneTasksNumber} de ${tasks.length}`);
       localStorage.setItem('todo-tasks', JSON.stringify(tasks));
