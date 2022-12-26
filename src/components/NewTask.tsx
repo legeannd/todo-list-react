@@ -15,7 +15,6 @@ export function NewTask({ onCreate }: NewTaskProps) {
   
   function handleOnKeyDown (event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
-      console.log(event)
       onCreate(taskValue)
       setTaskValue('')
     }
