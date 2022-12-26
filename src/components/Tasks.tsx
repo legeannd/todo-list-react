@@ -1,7 +1,7 @@
 import styles from './Tasks.module.css';
 
 import clipboard from '../assets/clipboard.png';
-import { Task, TaskProps } from './Task';
+import { Task } from './Task';
 import { TaskObject } from '../App';
 
 interface TasksProps {

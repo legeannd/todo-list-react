@@ -1,6 +1,6 @@
 import styles from './NewTask.module.css';
 import { PlusCircle } from 'phosphor-react';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
 
 interface NewTaskProps {
   onCreate: (content: string) => void;
@@ -11,6 +11,14 @@ export function NewTask({ onCreate }: NewTaskProps) {
 
   function handleCreateTaskText (event: ChangeEvent<HTMLInputElement>) {
     setTaskValue(event.target.value)
+  }
+  
+  function handleOnKeyDown (event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter") {
+      console.log(event)
+      onCreate(taskValue)
+      setTaskValue('')
+    }
   }
 
   function handleClickOnCreateButton () {
@@ -24,6 +32,7 @@ export function NewTask({ onCreate }: NewTaskProps) {
         type="text" 
         value={taskValue}
         onChange={handleCreateTaskText}
+        onKeyDown={handleOnKeyDown}
         placeholder="Add a new task" 
         className={styles.input}
       />

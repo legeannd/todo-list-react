@@ -37,7 +37,7 @@ export function App() {
       setDoneTasks('0');
       localStorage.removeItem('todo-tasks');
     } else {
-      setDoneTasks(`${doneTasksNumber} de ${tasks.length}`);
+      setDoneTasks(`${doneTasksNumber} of ${tasks.length}`);
       localStorage.setItem('todo-tasks', JSON.stringify(tasks));
     }
 
